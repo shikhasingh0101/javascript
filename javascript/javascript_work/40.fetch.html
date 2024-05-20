@@ -1,0 +1,27 @@
+<html>
+<body>
+    <script>
+        async function getdata(){
+            const response= await fetch("employee.json");
+            const jsonData= await response.json();
+            alert(jsonData);
+        }
+        async function postdata(){
+            alert("data posted");
+        }
+        async function putdata(){
+            alert("data updated");
+        }
+        async function deletedata(){
+            alert("data deleted");
+        }
+
+
+    </script>
+    <button onclick="getdata()">get</button>
+    <input type="button" onclick="postdata()"  value="post">
+    <input type="button" onclick="putdata()"  value="put">
+    <input type="button" onclick="deletedata()"  value="delete">
+
+</body>
+</html>

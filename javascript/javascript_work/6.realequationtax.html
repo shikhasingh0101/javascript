@@ -1,0 +1,24 @@
+<html>
+<p>tax<input type="text" id="txttax" disabled>
+<script>
+    var income=parseInt(prompt("enter the gross income:"));
+    var tax=0;
+    if(income<=600000)
+    tax=income-600000*0.0;
+   
+    else 
+    if(income<=1000000)
+    tax=income-600000*0.10;
+    else
+     if(income<=1200000)
+    tax=income-1000000*0.15+400000*.1+0;
+    else 
+    if(income<=1500000)
+    tax=income-1200000*0.20 + 200000*.15+ 400000*0.1+0;
+    else 
+    tax=income-1500000*0.30+ 300000*0.2+ 200000*.15+400000*0.1+0;
+    
+    txttax.value=tax;
+   
+</script>
+</html> 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function upi(mfrom,mto,amount,fun1){
+            if(mfrom==null||mto==null||amount==null){
+                fun1("error")
+            }else{
+                fun1("success")
+            }
+        }
+        function Bhimupi(M1, M2, amt) {
+            upi(M1,M2,amt,function(a){
+                
+                    if (a.toLowerCase() === "success") 
+                        document.write("<p style='color:green'>Payment Done</p>");
+                     else if (a.toLowerCase() === "error") 
+                        document.write("<p style='color:red'>Error</p>");
+                     else 
+                        document.write("Unknown");
+                    
+            });}
+            function gpay(mfrom,mto,amount,fun1){
+                if(mfrom==null||mto==null||amount==null){
+                    fun1("error")
+                }else{
+                    fun1("success")
+                }
+            }
+            function gpay(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<img src='https://zeuxinnovation.com/wp-content/uploads/2023/04/maximising-user-satisfaction-1.jpg' style='background-size:cover;'>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<img src='https://cdn.dribbble.com/users/399488/screenshots/3077134/payment_declined_1x.jpg?resize=400x0' style='background-size:cover;'>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+
+
+            function phonepay(mfrom,mto,amount,fun1){
+                if(mfrom==null||mto==null||amount==null){
+                    fun1("error")
+                }else{
+                    fun1("success")
+                }
+            }
+            function phonepay(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<p style='color:red'>&#8377;1000 notfound</p>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<p style='color:green'>&#8377;1000 paid</p>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+               
+    </script>
+    <input type="button" onclick="Bhimupi(null,null,9000)" value="bhimupi">
+    <br>
+    <input type="button" onclick="Bhimupi(9022343534,2356256234,20000)" value="bhimupi">
+    <br>
+    <input type="button" onclick="gpay(null,null,9000)" value="gpay">
+    <br>
+    <input type="button" onclick="gpay(9022343534,2356256234,20000)" value="g_pay">
+    <br>
+    <input type="button" onclick="phonepay(null,null,1000)" value="phonepay">
+    <br>
+    <input type="button" onclick="phonepay(9022343534,2356256234,20000)" value="phonepay">
+    <br>
+
+
+    
+</body>
+</html>

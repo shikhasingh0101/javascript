@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun1(){
+            alert("enumeration in javascript");
+            var SIZE={
+                SMALL:{value:0, name:"small", code:"x"},
+                MEDIUM:{value:1, name:"medium", code:"xl"},
+                LARGE:{value:2, name:"large", code:"xxl"}
+
+            };
+            var bagsize=SIZE.MEDIUM;
+            if(bagsize == SIZE.MEDIUM){
+                alert(bagsize.value + ":" +bagsize.name)
+            }
+        }
+    </script>
+    <h1>Enumeration</h1>
+    <input type="button" onclick="fun1()" value="enumeration"><br>
+   
+    
+</body>
+</html>

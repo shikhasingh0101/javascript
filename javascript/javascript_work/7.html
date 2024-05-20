@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+
+
+    function fun1()
+    {
+    alert("switchcase");}
+
+    function fun2()
+    {
+    alert("for loop");}
+    function fun3()
+    {
+    alert("do while loop");}
+    function fun4()
+    {
+    alert("while loop");}
+    function fun5()
+    {
+    alert("foreach loop");}
+    function fun1() {
+        var score = parseInt(prompt("Enter the feedback score"));
+        var remarks;
+        switch(score) {
+            case 5:
+                remarks = "excellent";
+                break;
+            case 4:
+                remarks = "very good";
+              
+                break;
+            case 3:
+                remarks = "good";
+                
+                var ctr=0;
+                do{
+                document.write("CODE<br>");
+                document.write("Eat<br>");
+                document.write("Sleep<br>");
+                document.write("<hr>");
+                ctr++
+                }while(ctr< 5);
+                
+                break;
+            case 2:
+                remarks = "Average";
+                break;
+            case 1:
+                remarks = "Below Average";
+                break;
+            default:
+                remarks = "Incorrect Input";
+        }
+        alert(remarks);
+    }
+   
+</script>
+
+<input type="button" onclick="fun1()" value="switchcase">
+<br>
+<input type="button" onclick="fun2()" value="for loop">
+<br>
+<input type="button" onclick="fun3()" value="Do while Loop">
+<br>
+<input type="button" onclick="fun4()" value="While Loop">
+<br>
+<input type="button" onclick="fun5()" value="For each Loop">
+<br>
+
+</body>
+</html>

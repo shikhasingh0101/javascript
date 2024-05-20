@@ -1,0 +1,52 @@
+ <html>
+    <head>
+        <title>Arithmetic Operations</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function add() {
+                var a = 12;
+                var b = 34;
+                return a + b;
+            }
+
+            function sub() {
+                var a = 12;
+                var b = 34;
+                return a - b;
+            }
+
+            function multiplication() {
+                var a = 12;
+                var b = 34;
+                return a * b;
+            }
+
+            function division() {
+                var a = 12;
+                var b = 34;
+                if (b !== 0) {
+                    return a / b;
+                } else {
+                    return "Division by zero is not allowed";
+                }
+            }
+
+            function square(num) {
+                var ans = num * num;
+                document.write("<h1 style='color:green'>The square of " + num + " is " + ans + "</h1>");
+            }
+        </script>
+
+        <input type="button" onclick="alert(add())" value="Add"><br>
+        <input type="button" onclick="square(12)" value="Square"><br>
+        <input type="button" onclick="alert(sub())" value="Subtraction"><br>
+        <input type="button" onclick="alert(multiplication())" value="Multiplication"><br>
+        <input type="button" onclick="alert(division())" value="Division"><br>
+    </body>
+</html>
+
+     
+
+
+    

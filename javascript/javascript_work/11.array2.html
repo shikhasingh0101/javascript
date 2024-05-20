@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>join functions</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var scripts=new Array();
+            scripts[0]="PHP ";
+            scripts[1]="ASP ";
+            scripts[2]="JAVASCRIPT";
+            scripts[3]="HTML";
+            scripts[50]="VBSCRIPT ";
+            scripts.push("shellscripts");
+            document.write("<br>length"+scripts.length);
+            document.write("<hr>");
+            var str= scripts.join(":");
+            document.write(str);
+            document.write(scripts.join("<br>"));
+
+        </script>
+    </body>
+</html>

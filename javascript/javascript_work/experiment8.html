@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Registration Form</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); 
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-container">
+        <h1>Event Registration Form</h1>
+        <form id="eventForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="city">Select City:</label><br>
+            <select id="city" name="city" onchange="checkEventAvailability()">
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Surat">Surat</option>
+            </select><br><br>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+
+            <label>Food Preferences:</label><br>
+            <select id="foodPreference" name="foodPreference" onchange="populateAvailableOptions()">
+                <option value="vegetarian">Vegetarian</option>
+                <option value="non-vegetarian">Non-Vegetarian</option>
+            </select><br><br>
+
+            <div id="availableOptions" style="display: none;">
+                <label>Available Options:</label><br>
+                <select id="availableItems" multiple></select><br><br>
+            </div>
+
+            <button type="button" onclick="registerEvent()">Register</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function registerEvent() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var city = document.getElementById("city").value;
+    var foodPreference = document.getElementById("foodPreference").value;
+    var selectedOptions = [];
+    var selectedItems = document.getElementById("availableItems").selectedOptions;
+    for (var i = 0; i < selectedItems.length; i++) {
+        selectedOptions.push(selectedItems[i].value);
+    }
+    
+    var message = "Registration Details:\n";
+    message += "Name: " + name + "\n";
+    message += "Email: " + email + "\n";
+    message += "Password: " + password + "\n";
+    message += "City: " + city + "\n";
+    message += "Food Preference: " + foodPreference + "\n";
+    message += "Selected Options: " + selectedOptions.join(", ") + "\n";
+
+    alert(message);
+    document.getElementById("eventForm").reset();
+}
+
+function populateAvailableOptions() {
+    var foodPreference = document.getElementById("foodPreference").value;
+    var availableItems = document.getElementById("availableItems");
+    availableItems.innerHTML = "";
+    if (foodPreference === "vegetarian") {
+        var vegItems = ["Bhel", "Panipuri"];
+        for (var i = 0; i < vegItems.length; i++) {
+            var option = document.createElement("option");
+            option.value = vegItems[i];
+            option.text = vegItems[i];
+            availableItems.appendChild(option);
+        }
+    } else if (foodPreference === "non-vegetarian") {
+        var nonVegItems = ["Chicken", "Fish"];
+        for (var i = 0; i < nonVegItems.length; i++) {
+            var option = document.createElement("option");
+            option.value = nonVegItems[i];
+            option.text = nonVegItems[i];
+            availableItems.appendChild(option);
+        }
+    }
+    document.getElementById("availableOptions").style.display = "block";
+}
+
+function checkEventAvailability() {
+    var city = document.getElementById("city").value;
+    var availableOptions = document.getElementById("availableOptions");
+    if (city.startsWith("A")) {
+        availableOptions.style.display = "block";
+        alert("Event is available in the selected city.");
+    } else {
+        availableOptions.style.display = "none";
+        alert("Event is not available in the selected city.");
+    }
+}
+</script>
+
+</body>
+</html>

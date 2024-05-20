@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Regular Expressions: shikha</title>
+</head>
+<body>
+    <script>
+        function reg1(){
+            alert("Regular Expression1");
+            var x=t1.value;
+            var patt = /\b[ABCD]/i
+            var cities=["Ahmedabad","pune", "mumbai","bangalore","chennai","pondicherry","daman"];
+            ans=0;
+            for(ctr=0;ctr<cities.length;ctr++)
+            {
+                if(patt.test(cities[ctr]))
+                ans=ans+1
+            }
+           
+            document.write("the number of cities found with the pattern is"+ans)
+        }
+        function reg2(){
+            alert("Regular Expression2");
+            let empid=t1.value;
+            var patt=/E\d{3}/
+            if(empid.length==4 && patt.test(empid))
+            document.getElementById("s1").innerHTML="valid employee id";
+            else
+            document.getElementById("s1").innerHTML="invalid employee id";
+
+        }
+        function reg3(){
+            alert("Regular Expression3");
+            var y = t1.value;
+            let patt3 = /mumbai/ig;
+    
+           if (patt3.test(y)) {
+            t1.value=y.toUpperCase();
+           }
+        }
+
+        function reg4(){
+            alert("Regular Expression4");
+           
+           var y = t1.value;
+           let patt = /chennai/ig;
+           if (patt.test(y)) {
+           t1.value = y.replace(patt, "tamilnadu");
+            }
+        }
+
+
+    </script>
+    Enter the Text:<input type="text" id="t1"><span id="s1"></span>
+    <br>
+    <button onclick="reg1()" style="font-size: 4em;">&#128512;</button>
+    <br>
+    <button onclick="reg2()" style="font-size: 4em;">&#128528;</button>
+    <br>
+    <button onclick="reg3()" style="font-size: 4em;">&#128522;</button>
+    <br>
+    <button onclick="reg4()" style="font-size: 4em;">&#128558;</button>
+    <br>
+</body>
+</html>
+
+
+

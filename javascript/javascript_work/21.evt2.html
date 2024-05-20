@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function fun1(){
+        alert("hello");
+        var btn=event.srcElement;
+        var choice=btn.value
+        alert(choice)
+        var remarks;
+        switch(choice){
+            case '1':
+            remarks="below average"
+            break;
+            case '2':
+            remarks="average"
+            break;
+            case '3':
+            remarks="good"
+            break;
+            case '4':
+            remarks="verygood"
+            break;
+            case '5':
+            remarks="Excellent"
+            break;
+            default:
+              remarks="no comments"
+        }
+              var x=document.createElement("H1")
+              x.innerHTML=remarks
+             document.body.appendChild(x)
+
+
+        }
+
+    
+    </script>
+    
+    <input type="button" onclick="fun1() " value="1">
+    <br>
+    <input type="button" onclick="fun1()" value="2">
+    <br>
+    <input type="button" onclick="fun1()" value="3">
+    <br>
+    <input type="button" onclick="fun1()" value="4">
+    <br>
+    <input type="button" onclick="fun1()" value="5">
+    <br>
+
+    
+</body>
+</html>

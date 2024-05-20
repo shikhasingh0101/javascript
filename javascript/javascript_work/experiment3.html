@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array of Citizens</title>
+</head>
+<body>
+<script>
+
+    function Citizen(citizenName, nationality, idProof, idName) {
+        this.citizenName = citizenName;
+        this.nationality = nationality;
+        this.idProof = idProof;
+        this.idName = idName;
+    }
+
+    var citizens = [];
+
+    
+    function addCitizen(citizen) {
+        citizens.push(citizen);
+    }
+
+    function findIndexByCitizenName(citizenName) {
+        for (var i = 0; i < citizens.length; i++) {
+            if (citizens[i].citizenName === citizenName) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+   
+    function updateIdProof(citizenName, newIdProof) {
+        var index = findIndexByCitizenName(citizenName);
+        if (index !== -1) {
+            citizens[index].idProof = newIdProof;
+        }
+    }
+
+    
+    addCitizen(new Citizen("shikha singh", "Indian", "Aadharcard", "AB123456"));
+    addCitizen(new Citizen("petter", "British", "Driver's License", "XYZ987654"));
+
+   
+    var initialAlertMessage = "Initial Array of Citizens:\n";
+    for (var i = 0; i < citizens.length; i++) {
+        initialAlertMessage += "Citizen Name: " + citizens[i].citizenName + ", Nationality: " + citizens[i].nationality +
+            ", ID Proof: " + citizens[i].idProof + ", ID Name: " + citizens[i].idName ;
+    }
+    alert(initialAlertMessage);
+
+   
+    updateIdProof("shikha singh", "National ID");
+
+   
+    var updatedAlertMessage = "Updated Array of Citizens:";
+    for (var j = 0; j < citizens.length; j++) {
+        updatedAlertMessage += "Citizen Name: " + citizens[j].citizenName + ", Nationality: " + citizens[j].nationality +
+            ", ID Proof: " + citizens[j].idProof + ", ID Name: " + citizens[j].idName ;
+    }
+    alert(updatedAlertMessage);
+</script>
+</body>
+</html>

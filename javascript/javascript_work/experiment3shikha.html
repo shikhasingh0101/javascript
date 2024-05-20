@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Citizens</title>
+</head>
+<body>
+    <button onclick="displayCitizens()">Show Citizens</button>
+    <div id="citizenContainer"></div>
+    
+    <script>
+        function Citizen(citizenName, nationality, idProof, idName) {
+            this.citizenName = citizenName;
+            this.nationality = nationality;
+            this.idProof = idProof;
+            this.idName = idName;
+        }
+
+        var citizens = [];
+
+        function addCitizen(citizen) {
+            citizens.push(citizen);
+        }
+
+        addCitizen(new Citizen("Shikha Singh", "Indian", "Aadhar Card", "AB123456"));
+        addCitizen(new Citizen("John", "British", "Driver's License", "XYZ987654"));
+
+        function displayCitizens() {
+            var displayString = "<h2>Array of Citizens:</h2>";
+            for (var i = 0; i < citizens.length; i++) {
+                displayString += "<p>Citizen Name: " + citizens[i].citizenName + "<br>Nationality: " + citizens[i].nationality +
+                    "<br>ID Proof: " + citizens[i].idProof + "<br>ID Name: " + citizens[i].idName + "</p>";
+            }
+            document.getElementById("citizenContainer").innerHTML = displayString;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+<body style="color:blue; font-size:2em; font-style:oblique">
+    <script>
+
+        function example1()
+        {alert("Objects 1");
+         var obj=
+         {
+         Model:"Real Me",
+         Price:8000,
+         RamResolution:"48px"
+  
+         }
+         obj.Model="Jio";
+         alert(obj["Model"]);
+         alert(obj.Price);
+         alert(obj["RamResolution"]);
+
+        }
+         
+        
+        function example2()
+        {alert("Objects 2");
+
+        var obj={instrumentName:"Guitar",price:10000}
+        alert(obj.instrumentName);
+        alert(obj["price"]);
+        obj.type="acoustic"
+        obj.material="wood"
+        alert(obj.material);
+        alert(obj.type);
+        delete obj.price;
+        alert(obj.price)
+
+         
+        }
+
+        function example3()
+        {alert("Objects 3");
+        var objSong={SongName:"SaReGaMaPa", SongType:"Classical",RagaName:"Tilang"}
+        for (x in objSong)
+        {
+            alert(x)
+            alert(objSong[x])
+        }
+        }
+
+        function example4()
+        {alert("Objects 4");
+
+        var laptops=
+        [
+           {ModelName:"HCL",price:33000},
+           {ModelName:"HP",price:43000},
+           {ModelName:"DELL",price:23000},
+           {ModelName:"MacBook",price:60000}
+        ]
+
+        document.write("<hr>");
+
+
+        document.write(laptops)
+        document.write("<hr>");
+        document.write(laptops[1]);
+        document.write("<hr>");
+        document.write("The list of laptops details are mentioned")
+        document.write("<hr>");
+
+        for(x in laptops)
+        {
+            for(y in laptops[x]){
+                document.write(laptops[x][y]+"<br>");
+               
+
+            }
+                
+
+            
+
+        }
+         
+        }
+
+
+    </script>
+    <input type="button" onclick="example1()" value="Object1"><br>
+    <input type="button" onclick="example2()" value="Object2"><br>
+    <input type="button" onclick="example3()" value="Object3"><br>
+    <input type="button" onclick="example4()" value="Object4"><br>
+</body>
+</html>

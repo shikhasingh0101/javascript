@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun1(){
+            var a=12;
+            var b=45;
+            var c=56;
+            {
+                let d=67;
+                var ans=add(a,b,c,d);
+  
+            }
+            cosole.log(ans);
+
+        }
+        function add(p,q,r,s){
+            ans=p+q+r+s;
+            ans++;
+            p++;
+            return ans+p
+
+        }
+    </script>
+    <input type="button" onclick="fun1()" value="ans">
+    
+</body>
+</html>

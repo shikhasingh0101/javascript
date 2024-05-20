@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inherit1</title>
+</head>
+<body>
+    <script>
+        class Basicphone{
+            calling(){
+                alert("simple calling");
+
+            }
+        }
+            class smartPhone extends Basicphone{
+                calling(){
+                    alert("smart calling")
+                }
+                Camera(){
+                    alert("i make images");
+                }
+            }
+        var obj1= new Basicphone();
+        var obj2=new smartPhone();
+        obj1.calling();
+        obj2.calling();
+        obj2.camera();
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <body>
+        <script>
+
+            function fun1()
+            {
+            alert("switchcase");}
+
+            function fun2()
+            {
+            alert("for loop");}
+            var score=90;
+
+            for(let j=1;j<=10;j++,score-=10){
+                console.log("shikha"+ j)
+                console.log("***********************");
+                console.log("my score is"+score);
+
+
+            }
+            function fun3()
+            {
+            alert("do while loop");
+            var ctr=0;
+            do
+            {
+            document.write("CODE<br>");
+            document.write("Eat<br>");
+            document.write("Sleep<br>");
+            document.write("<hr>");
+            ctr++
+            }
+            while(ctr< 5);
+            }
+            
+
+    function fun4()
+    {
+        alert("while loop");
+        let ctr = 10;
+        while(ctr>=-5)
+        {
+            document.write("shikha....."+ctr)
+            ctr-=2;
+        }
+    }
+
+            function fun5()
+            {
+            alert("foreach loop");}
+
+        </script>
+        <input type="button" onclick="fun1()" value="switchcase">
+        <br>
+        <input type="button" onclick="fun2()" value="for loop">
+        <br>
+        <input type="button" onclick="fun3()" value="do while loop">
+        <br>
+        <input type="button" onclick="fun4()" value="while loop">
+        <br>
+        <input type="button" onclick="fun5()" value="foreach loop">
+        <br>
+    </body>
+</html>

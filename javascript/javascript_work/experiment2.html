@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Activity Suggestion</title>
+<style>
+    body{font-family:Arial, sans-serif;background-color:#f0f0f0;}
+    .container{max-width:300px;margin:50px auto;padding:20px;background-color:#fff;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;}
+    input{width:100%;padding:8px;margin:10px 0;border:1px solid #ccc;border-radius:4px;}
+    button{background-color:#4CAF50;color:#fff;padding:10px 20px;border:none;border-radius:4px;cursor:pointer;transition:background-color 0.3s;}
+    button:hover{background-color:#45a049;}
+    p{font-size:18px;margin-top:20px;}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Age Activity Suggestion</h1>
+    <input type="number" placeholder="Enter your age" id="age">
+    <button onclick="suggestActivity()">Suggest Activity</button>
+    <p id="activity"></p>
+</div>
+<script>
+function suggestActivity() {
+    var age = parseInt(document.getElementById("age").value);
+    var activityElement = document.getElementById("activity");
+    if (isNaN(age) || age <= 0) {activityElement.textContent = "Please enter a valid age.";return;}
+    var activity;
+    
+   
+    var i = 0;
+    while (i < age) {
+        activity = "You're still young, keep growing!";
+        i++;
+    }
+    
+   
+    var j = 0;
+    do {
+        activity = "Keep exploring the world!";
+        j++;
+    } while (j < age / 2);
+    
+    
+    for (var k = 0; k < age / 4; k++) {
+        activity = "Enjoy your youth!";
+    }
+    
+    activityElement.textContent = activity;
+}
+</script>
+</body>
+</html>

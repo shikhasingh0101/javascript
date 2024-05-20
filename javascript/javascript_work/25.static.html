@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class mobileApp{
+            constructor(a){
+                this.appName=a
+            }
+            static AppFeatures(){
+                alert("mobile features")
+            }
+        }
+        var obj=new mobileApp("smartphone")
+        mobileApp.AppFeatures();
+        alert("staticdemo")
+        obj.AppFeatures(); 
+    </script>
+    <p id="p1">output</p>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Clock</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url('https://m.media-amazon.com/images/S/aplus-media-library-service-media/da727410-620f-424b-9545-d52891b5c25c.__CR0,37,1500,928_PT0_SX970_V1___.jpg');
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .clock-container {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 100px;
+        border-radius: 2000px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #digital-clock {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+   
+</style>
+</head>
+<body>
+
+<div class="clock-container">
+    <h1>Digital Clock</h1>
+    
+    <div id="digital-clock"></div>
+   
+</div>
+
+<script>
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const formattedHours = hours < 10 ? `0${hours}` : hours;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+    const clockDisplay = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+    document.getElementById('digital-clock').textContent = clockDisplay;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
